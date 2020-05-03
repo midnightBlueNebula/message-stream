@@ -1,0 +1,48 @@
+body{
+    background: linear-gradient(30deg, rgb(8, 1, 66), rgba(7, 1, 66, 0.808)) no-repeat;
+    color: rgb(32, 191, 240);
+    height: 100vh;
+}
+
+#navbar{
+    float: right;
+    a{
+        text-decoration: none;
+        color: rgb(32, 191, 240);
+    }
+    a:hover{
+        color: rgb(35, 220, 245);
+    }
+}
+
+#login-form{
+    border: 1px solid rgb(8, 1, 66);
+    border-radius: 25px;
+    background: linear-gradient(30deg, rgb(12, 3, 88), rgba(11, 3, 88, 0.829));
+    box-shadow: 1px 1px 10px 10px rgb(8, 1, 66);
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: 60px;
+    clear: both;
+    margin: auto auto;
+    text-align: center;
+    #login-title{
+        position: relative;
+        top: 50px;
+        text-align: center;
+    }
+    form{
+        table{
+            position: relative;
+            top: -30px;
+            margin: auto auto;
+        }
+        input{
+            background: linear-gradient(30deg, rgb(12, 3, 88), rgb(15, 5, 112));
+            color: rgb(37, 226, 251);
+        }
+        position: relative;
+        top: 30%;
+    }
+}

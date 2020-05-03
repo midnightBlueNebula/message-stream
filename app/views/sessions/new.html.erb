@@ -1,0 +1,25 @@
+<section id="login-form">
+    <h1 id="login-title">Login</h1>
+    <%= form_for :session do |f| %>
+      <table>
+      <tr>
+        <td><%= f.label "E-mail:  " %></td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      
+      <tr>
+        <td><%= f.label "Password:" %></td>
+        <td><%= f.password_field :password %></td>
+      </tr>
+
+      <tr>
+        <td><%= f.label "Remember Me!" %><%= f.check_box :remember_me %></td>
+        <td></td>
+      </tr>
+
+      <br />
+      </table>
+
+      <%= f.submit "Login" %>
+    <% end %>
+</section>

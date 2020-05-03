@@ -1,0 +1,4 @@
+<%= form_for action.to_sym, url: "/#{action}/message", :action => action.to_sym, remote: true do |f| %>
+    <%= f.hidden_field :post_id, value: id %>
+    <%= f.submit action.to_sym %>  
+<% end %>

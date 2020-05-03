@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  password_digest: MyString
+  remember_digest: MyString
+  confirmed: false
+  admin: false
+  online: false
+  locked: false
+  banned: false
+  isolated: false
+  karma: 1
+
+two:
+  name: MyString
+  email: MyString
+  password_digest: MyString
+  remember_digest: MyString
+  confirmed: false
+  admin: false
+  online: false
+  locked: false
+  banned: false
+  isolated: false
+  karma: 1

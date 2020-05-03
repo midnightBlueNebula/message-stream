@@ -1,0 +1,16 @@
+<section id="stream-section">
+    <% @stream.each do |m| %>
+        <section class="render-post">
+            <%= render 'shared/view_post', m: m %>
+        </section>    
+    <% end %>
+</section>
+
+<% if logged_in? %>
+    <section id="post-form">
+        <%= form_for :post, remote: true, url: "/stream", :action => :create do |f| %>
+            <%= f.text_area :content, id: "post-area", placeholder: "Type your message here." %>
+            <%= f.submit "Send", id: "send-post-button" %>
+        <% end %>
+    </section>
+<% end %>

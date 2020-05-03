@@ -1,0 +1,17 @@
+<h1>Confirmation Queue</h1>
+
+<section class= "the-queue">
+    <% @users.each do |user| %>
+        <section id=<%= "user-#{user.id}" %> class="q-user-info">
+            <section class="q-user-name">Name: <%= user.name %></section>
+            <section class="q-user-email">E-mail: <%= user.email %></section>
+            <section class="q-register-date">Applied at: <%= user.created_at %></section>
+                <section class="confirm-form">
+                    <%= form_for :user, url: confirmation_path, action: :confirm, remote: true do |f| %>
+                        <%= f.hidden_field :id, value: user.id %>
+                        <%= f.submit "Confirm!" %>
+                    <% end %>
+                </section>
+        </section>
+    <% end %>
+</section>
