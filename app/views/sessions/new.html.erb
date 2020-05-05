@@ -1,5 +1,5 @@
-<section id="login-form">
-    <h1 id="login-title">Login</h1>
+<section id="login-register-form">
+    <h1 id="login-register-title">Make It Rain!</h1>
     <%= form_for :session do |f| %>
       <table>
       <tr>
@@ -12,13 +12,10 @@
         <td><%= f.password_field :password %></td>
       </tr>
 
-      <tr>
-        <td><%= f.label "Remember Me!" %><%= f.check_box :remember_me %></td>
-        <td></td>
-      </tr>
+      </table>
+      <%= f.label "Remember Me!" %><%= f.check_box :remember_me %>
 
       <br />
-      </table>
 
       <%= f.submit "Login" %>
     <% end %>

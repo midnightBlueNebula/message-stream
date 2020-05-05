@@ -1,26 +1,29 @@
-<h1>Registration Form</h1>
-
-<section id="register-form">
+<section id="login-register-form">
+    <h1 id="login-register-title">Join the Stream!</h1>
     <%= form_for @user, url: register_path, action: :new do |f| %>
-        <%= f.label "Name:" %>
-        <%= f.text_field :name %>
+        <table>
         
-        <br />
+        <tr>
+            <td><%= f.label "Name:" %></td>
+            <td><%= f.text_field :name %></td>
+        </tr>
 
-        <%= f.label "E-mail:" %>
-        <%= f.text_field :email %>
+        <tr>
+            <td><%= f.label "E-mail:  " %></td>
+            <td><%= f.text_field :email %></td>
+        </tr>
+      
+        <tr>
+            <td><%= f.label "Password:" %></td>
+            <td><%= f.password_field :password %></td>
+        </tr>
 
-        <br />
+        <tr>
+            <td><%= f.label "Password Confirmation:" %></td>
+            <td><%= f.password_field :password_confirmation %></td>
+        </tr>
 
-        <%= f.label "Password:" %>
-        <%= f.password_field :password %>
-
-        <br />
-
-        <%= f.label "Password Confirmation:" %>
-        <%= f.password_field :password_confirmation %>
-
-        <br />
+        </table>       
 
         <%= f.submit "Register" %>
     <% end %>

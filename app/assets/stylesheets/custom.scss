@@ -15,7 +15,7 @@ body{
     }
 }
 
-#login-form{
+#login-register-form{
     border: 1px solid rgb(8, 1, 66);
     border-radius: 25px;
     background: linear-gradient(30deg, rgb(12, 3, 88), rgba(11, 3, 88, 0.829));
@@ -27,7 +27,7 @@ body{
     clear: both;
     margin: auto auto;
     text-align: center;
-    #login-title{
+    #login-register-title{
         position: relative;
         top: 50px;
         text-align: center;
@@ -42,7 +42,31 @@ body{
             background: linear-gradient(30deg, rgb(12, 3, 88), rgb(15, 5, 112));
             color: rgb(37, 226, 251);
         }
+        input[type="submit"]{
+            position: relative;
+            top: 20px;
+            width: 150px;
+            height: 35px;
+            font-size: 20px;
+            border: 1px solid rgb(37, 226, 251);
+            border-radius: 5px;
+        }
+        input[type="text"]{
+            border: 1px solid rgb(37, 226, 251);
+            border-radius: 3px;
+        }
+        input[type="password"]{
+            border: 1px solid rgb(37, 226, 251);
+            border-radius: 3px;
+        }
+        input[type="text"]:focus{
+            border: 1px inset rgb(146, 242, 255);
+        }
+        input[type="password"]:focus{
+            border: 1px inset rgb(146, 242, 255);
+        }
         position: relative;
-        top: 30%;
+        top: 100px;
+        line-height: 35px;
     }
 }
