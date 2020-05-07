@@ -9,7 +9,8 @@
 <% if logged_in? %>
     <section id="post-form">
         <%= form_for :post, remote: true, url: "/stream", :action => :create do |f| %>
-            <%= f.text_area :content, id: "post-area", placeholder: "Type your message here." %>
+            <%= f.text_area :content, id: "post-area", placeholder: "Type your message here.", rows: 8 %>
+            <br />
             <%= f.submit "Send", id: "send-post-button" %>
         <% end %>
     </section>

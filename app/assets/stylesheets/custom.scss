@@ -1,7 +1,6 @@
 body{
-    background: linear-gradient(30deg, rgb(8, 1, 66), rgba(7, 1, 66, 0.808)) no-repeat;
+    background-color: rgb(8, 1, 66);
     color: rgb(32, 191, 240);
-    height: 100vh;
 }
 
 #navbar{
@@ -19,7 +18,7 @@ body{
     border: 1px solid rgb(8, 1, 66);
     border-radius: 25px;
     background: linear-gradient(30deg, rgb(12, 3, 88), rgba(11, 3, 88, 0.829));
-    box-shadow: 1px 1px 10px 10px rgb(8, 1, 66);
+    box-shadow: 1px 1px 10px 10px rgb(6, 2, 46);
     width: 400px;
     height: 400px;
     position: relative;
@@ -69,4 +68,58 @@ body{
         top: 100px;
         line-height: 35px;
     }
+}
+
+#stream-section{
+    clear: both;
+    position: relative;
+    top: 10px;
+    margin: auto auto;
+    border: 1px solid rgb(146, 242, 255);
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+.render-post{
+    margin: 1px 1px 1px 1px;
+    border: 1px solid rgb(146, 242, 255);
+}
+
+#post-form{
+    width: 100%;
+    #post-area{
+        width: 100%;
+        border: 1px solid rgb(37, 226, 251);
+        border-radius: 5px; 
+        background: linear-gradient(30deg, rgb(37, 226, 251), rgb(93, 236, 255));
+        color: rgb(12, 3, 88);
+    }
+    #send-post-button{
+        text-align: center;
+        height: 35px;
+        width: 100%;
+        font-size: 20px;
+        border: 1px solid rgb(37, 226, 251);
+        border-radius: 5px; 
+        background: linear-gradient(30deg, rgb(12, 3, 88), rgb(15, 5, 112));
+        color: rgb(37, 226, 251);
+    }
+}
+
+.user-name{
+    display: inline;
+}
+
+.karma{
+    display: inline;
+}
+
+.like{
+    display: inline;
+}
+
+.dislike{
+    display: inline;
 }

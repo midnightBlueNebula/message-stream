@@ -1,12 +1,12 @@
-<section class="user-name"><%= m.user.name %></section>
-    <section class="post-content"><%= m.content %></section>
-    <section class="karma" id=<%= "karma-#{m.id}" %>><%= m.karma %></section>
+<p class="user-name"><%= m.user.name %></p> | 
+    <p class="karma" id=<%= "karma-#{m.id}" %>><%= m.karma %></p>
+    <p class="post-content"><%= m.content %></p>
     <% if logged_in? %>
-        <section class="like">
+        <p class="like">
             <%= render 'shared/like_form', action: "like", id: m.id %>
-        </section>
-        <section class="dislike">
+        </p>
+        <p class="dislike">
             <%= render 'shared/like_form', action: "dislike", id: m.id %>
-        </section>
+        </p>
     <% end %>
-</section>
+</p>
