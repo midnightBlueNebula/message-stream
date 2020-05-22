@@ -7,7 +7,7 @@ class StreamsController < ApplicationController
     respond_to do |format|
       format.html 
       format.json { render json: @stream }
-      format.js   { render layout: false }
+      format.js   
     end
   end
   

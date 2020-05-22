@@ -2,11 +2,11 @@
     <p class="karma" id=<%= "karma-#{m.id}" %>><%= m.karma %></p>
     <p class="post-content"><%= m.content %></p>
     <% if logged_in? %>
-        <p class="like">
+        <span class="like">
             <%= render 'shared/like_form', action: "like", id: m.id %>
-        </p>
-        <p class="dislike">
+        </span>
+        <span class="dislike">
             <%= render 'shared/like_form', action: "dislike", id: m.id %>
-        </p>
+        </span>
     <% end %>
 </p>
