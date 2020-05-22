@@ -2,7 +2,7 @@ class LikesController < ApplicationController
     before_action { back_or_root unless logged_in? }
     
     def like 
-        like_menager
+        like_menager("like")
     end
 
     def dislike 
@@ -13,34 +13,54 @@ class LikesController < ApplicationController
 
     def like_menager(role="like")
         @post = Message.find_by(id: params[role.to_sym][:post_id])
-        back_or_root if @post.created_at < 5.minutes.ago || @post.nil?
+        back_or_root if @post.nil?
         respond_to do |f|
-            notice_message = ""
-            change = 0
-            if Like.where(user_id: current_user.id, message_id: @post.id).exists? || Dislike.where(user_id: current_user.id, message_id: @post.id).exists?
-                flash[:warning] = "You've already voted for this message."
-                back_or_root
-            else 
-                if role == "like" 
-                    if Like.new(user_id: current_user.id, message_id: @post.id).save 
-                        change = 1
-                        notice_message = "Liked!"
-                    else
-                        notice_message = "Error!"
-                    end
-                else 
-                    if Dislike.new(user_id: current_user.id, message_id: @post.id).save 
-                        change = -1
-                        notice_message = "Disliked!"
-                    else
-                        notice_message = "Error!"
-                    end
-                end 
-                @post.update_attribute(:karma, @post.karma+change)
-                current_user.update_attribute(:karma, current_user.karma+change)
+            if role == "dislike"
+                if !get_like.empty?
+                    get_like.delete_all
+                    reduce_point
+                elsif get_dislike.empty?
+                    create_dislike
+                end
+            else
+                if !get_dislike.empty?
+                    get_dislike.delete_all
+                    add_point
+                elsif get_like.empty?
+                    create_like
+                end
             end 
-            f.html { redirect_to "/stream" }
-            f.js   
+            f.js    
         end
+    end
+
+    def get_like
+        Like.where("user_id = ? AND message_id = ?", current_user.id, @post.id)
+    end
+
+    def get_dislike
+        Dislike.where("user_id = ? AND message_id = ?", current_user.id, @post.id)
+    end
+
+    def create_like
+        if Like.new(user_id: current_user.id, message_id: @post.id).save
+            add_point
+        end
+    end
+
+    def create_dislike
+        if Dislike.new(user_id: current_user.id, message_id: @post.id).save
+            reduce_point
+        end
+    end
+
+    def add_point
+        @post.user.update_attribute(:karma, current_user.karma+1)
+        @post.update_attribute(:karma, @post.karma+1)
+    end
+
+    def reduce_point
+        @post.user.update_attribute(:karma, current_user.karma-1)
+        @post.update_attribute(:karma, @post.karma-1)
     end
 end

@@ -5,13 +5,8 @@ class PostsController < ApplicationController
         @post = current_user.messages.build(content: params[:post][:content])
         respond_to do |format|
             if @post.save
-                notice_message = "Posted message!"
-            else 
-                notice_message = "Failed to post message."
-            end
-            
-            format.html 
-            format.js   
+                format.js  
+            end 
         end
     end
 end

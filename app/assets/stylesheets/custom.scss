@@ -73,28 +73,32 @@ body{
 #stream-section{
     clear: both;
     position: relative;
-    top: 10px;
+    top: 30px;
     margin: auto auto;
     border: 1px solid rgb(146, 242, 255);
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 500px;
-    max-width: 500px;
+    height: 70vh;
+    width: 50vw;
+    
 }
 
 .render-post{
-    margin: 1px 1px 1px 1px;
-    border: 1px solid rgb(146, 242, 255);
+    margin: 2px 2px 2px 2px;
+    border: 2px solid rgb(146, 242, 255);
 }
 
 #post-form{
     width: 100%;
     #post-area{
+        position: relative;
+        top: 10px;
         width: 100%;
         border: 1px solid rgb(37, 226, 251);
         border-radius: 5px; 
         background: linear-gradient(30deg, rgb(37, 226, 251), rgb(93, 236, 255));
         color: rgb(12, 3, 88);
+        font-size: 16px;
     }
     #send-post-button{
         text-align: center;

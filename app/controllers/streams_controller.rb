@@ -5,8 +5,9 @@ class StreamsController < ApplicationController
               .order(created_at: :desc)
 
     respond_to do |format|
-      format.html { render :show }
-      format.js   
+      format.html 
+      format.json { render json: @stream }
+      format.js   { render layout: false }
     end
   end
   
